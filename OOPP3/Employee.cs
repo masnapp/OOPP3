@@ -40,7 +40,7 @@ namespace OOPP3
 
         public void validateEmployeeID()
         {
-            if (lineInput[0] != null)
+            if (lineInput[0].Length != 0)
             {
                 setDepartmentNumber();
             }

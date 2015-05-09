@@ -16,22 +16,22 @@ namespace OOPP3
             
             // read payroll file 
             FileStream file = new FileStream("payroll.txt", FileMode.Open, FileAccess.Read);
-            StreamReader payroll = new StreamReader(file);
-
-            // string to hold each line from file
-            string line = payroll.ReadLine();
-             
-            while (line != null)
+            using(StreamReader payroll = new StreamReader(file))
             {
-                string[] fields = line.Split(',');
+                // string to hold each line from file
+                string line = payroll.ReadLine();
 
-                emp.setLineInput(fields);
+                while (line != null)
+                {
+                    string[] fields = line.Split(',');
 
-                line = payroll.ReadLine();
+                    emp.setLineInput(fields);
+
+                    line = payroll.ReadLine();
+                }
+
+                emp.printDepartmentPay();
             }
-
-            emp.printDepartmentPay();
-            
         }
     }
 }
