@@ -1,7 +1,7 @@
 # OOPP3
 CIS  129 Project 3
 
-This project required us to desing a program that would take a payroll.txt file and manipulate and validate the data so get the
+This project required us to design a program that would take a payroll.txt file and manipulate and validate the data so get the
 sum payroll for 7 different departments. 
 
 The txt file is as follows:
