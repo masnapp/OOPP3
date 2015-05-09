@@ -11,14 +11,16 @@ namespace OOPP3
     {
         static void Main(string[] args)
         {
+            // initialize employee object
             Employee emp = new Employee();
             
+            // read payroll file 
             FileStream file = new FileStream("payroll.txt", FileMode.Open, FileAccess.Read);
             StreamReader payroll = new StreamReader(file);
 
+            // string to hold each line from file
             string line = payroll.ReadLine();
              
-            
             while (line != null)
             {
                 string[] fields = line.Split(',');

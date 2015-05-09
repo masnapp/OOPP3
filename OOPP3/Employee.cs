@@ -8,26 +8,25 @@ namespace OOPP3
 {
     class Employee
     {
+        private Department[] departments;
+
         private int empDepNum;
-
-
         private decimal hourlyPay;
         private decimal hoursWorked;
         private string[] lineInput;
-        Department[] departments = new Department[7];
-        
 
-        //public void setDepartments()
-        //{
-        //    departments = new Department[7];
-        //    for (int i = 0; i < 6; i++)
-        //    {
-        //        departments[i] = new Department();
-        //    }
-        //}
+
+        public Employee()
+        {
+            departments = new Department[7];
+            for (int i = 0; i < 6; i++)
+            {
+                departments[i] = new Department();
+            }
+        }
 
         public void setLineInput(string[] input)
-        {
+        {// method that will determine that input is correct length
             if (input.Length == 4)
             {
                 lineInput = input;
@@ -37,7 +36,7 @@ namespace OOPP3
             {
                 Console.WriteLine("Error, the date line for this employee is not the correct length");
             }
-        }
+        } // end setLineInput
 
         public void validateEmployeeID()
         {
