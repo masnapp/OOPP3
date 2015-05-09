@@ -14,16 +14,17 @@ namespace OOPP3
         private decimal hourlyPay;
         private decimal hoursWorked;
         private string[] lineInput;
-        Department[] departments;
+        Department[] departments = new Department[7];
+        
 
-        public void setDepartments()
-        {
-            departments = new Department[7];
-            for (int i = 0; i < 6; i++)
-            {
-                departments[i] = new Department();
-            }
-        }
+        //public void setDepartments()
+        //{
+        //    departments = new Department[7];
+        //    for (int i = 0; i < 6; i++)
+        //    {
+        //        departments[i] = new Department();
+        //    }
+        //}
 
         public void setLineInput(string[] input)
         {

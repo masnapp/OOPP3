@@ -18,7 +18,7 @@ namespace OOPP3
 
             string line = payroll.ReadLine();
              
-            emp.setDepartments();
+            
             while (line != null)
             {
                 string[] fields = line.Split(',');
