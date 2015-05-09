@@ -6,12 +6,12 @@ sum payroll for 7 different departments.
 
 The txt file is as follows:
 
-EMP001,1,10,10
-EMP002,2,11,10
-EMP003,3,12,10
-EMP004,4,13,10
-EMP005,5,14,10
-EMP006,6,15,10
+  EMP001,1,10,10
+  EMP002,2,11,10
+  EMP003,3,12,10
+  EMP004,4,13,10
+  EMP005,5,14,10
+  EMP006,6,15,10
 EMP007,7,16,10
 ,1,10,10
 EMPFALSE,0,10,10
