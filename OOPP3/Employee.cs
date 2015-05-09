@@ -14,7 +14,7 @@ namespace OOPP3
         private decimal hourlyPay;
         private decimal hoursWorked;
         private string[] lineInput;
-
+        private int counter;
 
         public Employee()
         {
@@ -27,6 +27,7 @@ namespace OOPP3
 
         public void setLineInput(string[] input)
         {// method that will determine that input is correct length
+            increaseCounter();
             if (input.Length == 4)
             {
                 lineInput = input;
@@ -34,7 +35,7 @@ namespace OOPP3
             }
             else
             {
-                Console.WriteLine("Error, the date line for this employee is not the correct length");
+                Console.WriteLine("Error on line {0}, the line is not the correct length", counter);
             }
         } // end setLineInput
 
@@ -46,7 +47,7 @@ namespace OOPP3
             }
             else
             {
-                Console.WriteLine("Error, the Employee number is blank");
+                Console.WriteLine("Error on line {0}, employee field is blank: \"{1}\"", counter, lineInput[0]);
             }
         }
 
@@ -58,7 +59,7 @@ namespace OOPP3
             }
             else
             {
-                Console.WriteLine("Erorr with employees department number");
+                Console.WriteLine("Error on line {0}, department field is incorrect: \"{1}\"", counter, lineInput[1]);
             }
         }
 
@@ -70,7 +71,7 @@ namespace OOPP3
             }
             else
             {
-                Console.WriteLine("Error witht the employees hourly pay");
+                Console.WriteLine("Error on line {0}, hourly pay field is incorecct: \"{1}\"", counter, lineInput[2]);
             }
         }
 
@@ -79,6 +80,10 @@ namespace OOPP3
             if (decimal.TryParse(lineInput[3], out hoursWorked) && hoursWorked > 0.00m)
             {
                 setDepartmentPay();
+            }
+            else
+            {
+                Console.WriteLine("Error one line {0}, hours worked field is incorrect: \"{1}\"", counter, lineInput[3]);
             }
         }
 
@@ -95,10 +100,17 @@ namespace OOPP3
 
         public void printDepartmentPay()
         {
+            Console.WriteLine("");
+            Console.WriteLine("Department # ---------- Gross Pay");
             for (int i = 0; i < 7; i++)
             {
-                Console.WriteLine("{0} -- {1}", i + 1,  departments[i].getDeparmentPay());
+                Console.WriteLine("{0, 12}    {1, 11}", i + 1,  departments[i].getDeparmentPay());
             }
+        }
+
+        public void increaseCounter()
+        {
+            counter += 1;
         }
 
     }
