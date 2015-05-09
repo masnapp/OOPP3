@@ -19,7 +19,7 @@ namespace OOPP3
         public Employee()
         {
             departments = new Department[7];
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 7; i++)
             {
                 departments[i] = new Department();
             }
@@ -43,6 +43,10 @@ namespace OOPP3
             if (lineInput[0] != null)
             {
                 setDepartmentNumber();
+            }
+            else
+            {
+                Console.WriteLine("Error, the Employee number is blank");
             }
         }
 
@@ -87,6 +91,14 @@ namespace OOPP3
         public void setDepartmentPay()
         {
             departments[empDepNum - 1].setDepartmentPay(calculatePay());
+        }
+
+        public void printDepartmentPay()
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                Console.WriteLine("{0} -- {1}", i + 1,  departments[i].getDeparmentPay());
+            }
         }
 
     }

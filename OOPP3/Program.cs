@@ -29,6 +29,8 @@ namespace OOPP3
 
                 line = payroll.ReadLine();
             }
+
+            emp.printDepartmentPay();
             
         }
     }

@@ -15,9 +15,9 @@ namespace OOPP3
             totalDepartmentPay += pay;
         }
 
-        public void printDeparmentPay()
+        public decimal getDeparmentPay()
         {
-            Console.WriteLine(totalDepartmentPay);
+            return totalDepartmentPay;
         }
 
     }
